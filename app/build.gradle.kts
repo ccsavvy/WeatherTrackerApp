@@ -85,4 +85,6 @@ dependencies {
     // Compose
     implementation(libs.androidx.ui)
     implementation(libs.androidx.foundation)
+    implementation(libs.material3)
+
 }

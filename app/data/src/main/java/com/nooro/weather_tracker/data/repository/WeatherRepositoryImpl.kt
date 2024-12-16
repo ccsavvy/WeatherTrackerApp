@@ -6,6 +6,7 @@ import com.nooro.weather_tracker.data.remote.WeatherRemoteDataSource
 import com.nooro.weather_tracker.domain.model.WeatherData
 import com.nooro.weather_tracker.domain.repository.WeatherRepository
 import com.nooro.weather_tracker.domain.util.Resource
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class WeatherRepositoryImpl @Inject constructor(
@@ -30,10 +31,10 @@ class WeatherRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun saveSelectedCity(city: String) {
-        weatherLocalDataSource.saveSelectedCity(city)
+    override suspend fun saveSelectedCityWeatherData(weatherData: WeatherData) {
+        weatherLocalDataSource.saveSelectedCityWeatherData(weatherData)
     }
 
-    override suspend fun getSelectedCity(): String? = weatherLocalDataSource.getSelectedCity()
+    override suspend fun getSelectedCityWeatherData(): Flow<WeatherData> = weatherLocalDataSource.getSelectedCityWeatherData()
 
 }

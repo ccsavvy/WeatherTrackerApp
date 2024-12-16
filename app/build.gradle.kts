@@ -21,7 +21,13 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "WEATHER_API_KEY", "\"bfea2337c7184e91b4e123529241312\"")
+            isDebuggable = true
+        }
+
         release {
+            buildConfigField("String", "WEATHER_API_KEY", "\"bfea2337c7184e91b4e123529241312\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -38,6 +44,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 
@@ -64,12 +71,8 @@ dependencies {
     kapt(libs.hilt.android.compiler)
 
 
-
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
-
-    // DataStore
-    implementation(libs.androidx.datastore.preferences)
 
     // for images with compose
     implementation(libs.coil.compose)

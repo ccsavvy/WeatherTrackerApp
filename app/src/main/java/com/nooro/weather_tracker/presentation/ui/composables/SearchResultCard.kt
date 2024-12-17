@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.nooro.weather_tracker.presentation.WeatherState
 import com.nooro.weather_tracker.presentation.ui.theme.lightGray
-import kotlin.math.max
 import kotlin.math.roundToInt
 
 @Composable

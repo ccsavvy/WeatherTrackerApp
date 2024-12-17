@@ -11,12 +11,16 @@ android {
 
     defaultConfig {
         minSdk = 24
-        targetSdk = 34
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "WEATHER_API_KEY", "\"bfea2337c7184e91b4e123529241312\"")
+        }
+
         release {
+            buildConfigField("String", "WEATHER_API_KEY", "\"bfea2337c7184e91b4e123529241312\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -29,8 +33,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
 
@@ -55,5 +64,4 @@ dependencies {
 
     // DataStore
     implementation(libs.androidx.datastore.preferences)
-
 }

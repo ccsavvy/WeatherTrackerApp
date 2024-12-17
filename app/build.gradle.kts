@@ -22,12 +22,10 @@ android {
 
     buildTypes {
         debug {
-            buildConfigField("String", "WEATHER_API_KEY", "\"bfea2337c7184e91b4e123529241312\"")
             isDebuggable = true
         }
 
         release {
-            buildConfigField("String", "WEATHER_API_KEY", "\"bfea2337c7184e91b4e123529241312\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -44,7 +42,6 @@ android {
     }
     buildFeatures {
         compose = true
-        buildConfig = true
     }
 }
 
@@ -86,5 +83,8 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.foundation)
     implementation(libs.material3)
+
+    // ConstraintLayout compose
+    implementation(libs.androidx.constraintlayout.compose)
 
 }

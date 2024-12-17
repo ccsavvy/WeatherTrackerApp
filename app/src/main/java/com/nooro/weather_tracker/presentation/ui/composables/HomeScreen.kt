@@ -35,7 +35,7 @@ fun HomeScreen(
             .focusRequester(focusRequester)
 
     ) {
-        SearchBar ({ city ->
+        SearchBar({ city ->
             viewModel.searchCity(city)
         }, focusRequester)
 

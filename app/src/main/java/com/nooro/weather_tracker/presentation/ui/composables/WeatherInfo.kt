@@ -16,6 +16,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -42,7 +43,7 @@ fun WeatherInfo(
         // Weather condition image
         AsyncImage(
             model = iconUrl,
-            contentDescription = "Weather Condition Icon",
+            contentDescription = stringResource(R.string.content_desc_weather_condition_icon),
             modifier = Modifier
                 .width(123.dp)
                 .height(123.dp),
@@ -70,7 +71,7 @@ fun WeatherInfo(
 
             Image(
                 painter = painterResource(id = R.drawable.city_arrow),
-                contentDescription = "Arrow Icon",
+                contentDescription = stringResource(R.string.content_desc_arrow_icon),
                 modifier = Modifier
                     .size(21.dp)
                     .constrainAs(arrowRef) {
@@ -88,7 +89,7 @@ fun WeatherInfo(
                 .wrapContentWidth()
         ) {
             Text(
-                text = "${temperature.roundToInt()}°",
+                text = "${temperature.roundToInt()}".plus(stringResource(R.string.degree_text)),
                 fontWeight = FontWeight.Bold,
                 fontSize = 64.sp,
                 modifier = Modifier.align(Alignment.Center)

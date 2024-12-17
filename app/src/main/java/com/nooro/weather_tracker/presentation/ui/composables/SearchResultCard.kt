@@ -17,11 +17,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
+import com.nooro.weather_tracker.R
 import com.nooro.weather_tracker.presentation.WeatherState
 import com.nooro.weather_tracker.presentation.ui.theme.lightGray
 import kotlin.math.roundToInt
@@ -65,7 +67,7 @@ fun SearchResultCard(
 
                 Spacer(modifier = Modifier.height(8.dp)) // Add spacing between city and temperature
                 Text(
-                    text = "${weatherState.temperature.roundToInt()}°",
+                    text = "${weatherState.temperature.roundToInt()}".plus(stringResource(R.string.degree_text)),
                     fontWeight = FontWeight.ExtraBold,
                     fontSize = 40.sp,
                     color = Color.Black,
@@ -75,7 +77,7 @@ fun SearchResultCard(
 
             AsyncImage(
                 model = weatherState.iconUrl,
-                contentDescription = "Weather Condition Icon",
+                contentDescription = stringResource(R.string.content_desc_weather_condition_icon),
                 modifier = Modifier
                     .size(83.dp, 183.dp)
             )

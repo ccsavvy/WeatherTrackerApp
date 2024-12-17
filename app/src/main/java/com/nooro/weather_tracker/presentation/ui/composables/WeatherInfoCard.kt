@@ -17,8 +17,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.nooro.weather_tracker.R
 import com.nooro.weather_tracker.presentation.ui.theme.lightGray
 import kotlin.math.roundToInt
 
@@ -90,7 +92,7 @@ fun WeatherInfoCard(
                         textAlign = TextAlign.Center
                     )
                     Text(
-                        text = "${feelsLike.roundToInt()}°",
+                        text = "${feelsLike.roundToInt()}".plus(stringResource(R.string.degree_text)),
                         style = MaterialTheme.typography.labelLarge,
                         modifier = Modifier.weight(1f),
                         textAlign = TextAlign.Center

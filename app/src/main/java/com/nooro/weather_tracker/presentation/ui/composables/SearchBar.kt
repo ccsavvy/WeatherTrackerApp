@@ -18,8 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import com.nooro.weather_tracker.R
 
 @Composable
 fun SearchBar(
@@ -32,7 +34,7 @@ fun SearchBar(
     OutlinedTextField(
         value = searchText,
         onValueChange = { searchText = it },
-        label = { Text("Search Location") },
+        label = { Text(stringResource(R.string.search_location)) },
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
@@ -40,7 +42,7 @@ fun SearchBar(
         leadingIcon = {
             Icon(
                 imageVector = Icons.Filled.Search,
-                contentDescription = "Search"
+                contentDescription = stringResource(R.string.content_desc_search)
             )
         },
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),

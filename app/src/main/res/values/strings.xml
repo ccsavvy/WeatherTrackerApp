@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">WeatherTrackerApp</string>
+    <string name="no_city_selected">No City Selected</string>
+    <string name="please_search_for_a_city">Please Search For A City</string>
+    <string name="humidity">Humidity</string>
+    <string name="uv">UV</string>
+    <string name="feels_like">Feels Like</string>
+    <string name="search_location">Search Location</string>
+    <string name="content_desc_search">Search</string>
+    <string name="content_desc_weather_condition_icon">Weather Condition Icon</string>
+    <string name="content_desc_arrow_icon">Arrow Icon</string>
+    <string name="degree_text">°</string>
 </resources>
